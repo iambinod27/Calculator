@@ -41,25 +41,38 @@ nav {
 
 header {
   height: 100px;
+  margin: 10px 0;
 
   .container {
     display: flex;
     align-items: center;
     height: 100%;
 
-    input {
-      max-width: 100%;
-      height: 80px;
+    .result {
+      width: 460px;
       border-radius: 10px;
-      border: none;
+      height: 100px;
       background: var(--screen-background);
-      font-size: var(--font-size);
+      text-align: right;
       padding: 1rem;
       color: var(--input-color);
-      -moz-appearance: textfield;
 
-      &:focus {
-        outline: none;
+      .input {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+
+        .operand {
+          margin-left: 5px;
+        }
+      }
+
+      .output {
+        display: flex;
+        height: 100%;
+        font-size: var(--font-size);
+        align-items: center;
+        justify-content: end;
       }
     }
   }
@@ -91,11 +104,24 @@ section {
         font-size: var(--font-size);
         padding: 2rem;
         border-bottom: 5px solid #b4a597;
+        cursor: pointer;
+
+        &:active {
+          border-bottom: 1px solid #b4a597;
+
+          transform: translateY(4px);
+        }
 
         &:nth-of-type(4) {
           background: var(--keys-background);
           color: var(--input-color);
           border-bottom: 5px solid #404e72;
+
+          &:active {
+            border-bottom: 1px solid #b4a597;
+
+            transform: translateY(4px);
+          }
         }
       }
 
@@ -112,12 +138,25 @@ section {
         grid-column-end: 3;
         padding: 2rem;
         border-bottom: 5px solid #404e72;
+        cursor: pointer;
+
+        &:active {
+          border-bottom: 1px solid #404e72;
+
+          transform: translateY(4px);
+        }
 
         &:last-child {
           background: var(--return-key-background);
           grid-column-start: 3;
           grid-column-end: 5;
           border-bottom: 5px solid #93261a;
+
+          &:active {
+            border-bottom: 1px solid #93261a;
+
+            transform: translateY(4px);
+          }
         }
       }
     }
@@ -130,7 +169,7 @@ section {
   }
   header {
     .container {
-      input {
+      .result {
         width: 310px;
       }
     }
