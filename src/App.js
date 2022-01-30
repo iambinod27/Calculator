@@ -3,16 +3,20 @@ import Input from "./components/Input";
 import Navbar from "./components/Navbar";
 import "./styles/app.scss";
 
+import { CalcProvider } from "./context/CalcContext";
+
 function App() {
   return (
     <>
-      <div className="center">
-        <Navbar />
+      <CalcProvider>
+        <div className="center">
+          <Navbar />
 
-        <Input />
+          <Input />
 
-        <Button />
-      </div>
+          <Button />
+        </div>
+      </CalcProvider>
     </>
   );
 }

@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CalcContext } from "../context/CalcContext";
 
 function Input() {
+  const { Calculation } = useContext(CalcContext);
+  const [output, setOutput] = Calculation;
+
   return (
     <header>
       <div className="container">
         <div className="result">
-          <div className="input">
-            2131 <div className="operand">x</div>
-          </div>
-          <div className="output">2131</div>
+          <div className="output">{output}</div>
         </div>
       </div>
     </header>
